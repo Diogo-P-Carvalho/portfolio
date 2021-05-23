@@ -72,3 +72,4 @@ Diogo Carvalho - Portfolio Comming Soon - [Linkedin](www.linkedin.com/in/diogo-c
 
 -   [React](https://reactjs.org/)
 -   [Create React App](https://create-react-app.dev/)
+-   [Google Fonts](https://fonts.google.com/)
