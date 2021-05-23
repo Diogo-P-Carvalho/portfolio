@@ -1,8 +1,42 @@
+import { useEffect } from 'react';
+import Typed from 'typed.js';
+import './Home.css';
+
 function Home() {
+
+  useEffect(() => {
+    console.log('create')
+    const typed = new Typed("#typed", {
+      stringsElement: '#typed-strings',
+      typeSpeed: 50,
+      backSpeed: 20,
+      backDelay: 700,
+      startDelay: 0,
+      loop: true
+    })
+
+    return () => {
+      console.log('destroy')
+      typed.destroy();
+    }
+  }, [])
+
+
+
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <main>
+      <div className="main-container">
+        <h1>Hello, <br />
+          <span id="typed-strings">
+            <span>I'm Diogo Carvalho</span>
+            <span>Software Developer</span>
+            <span>And Coffee Lover!</span>
+            <span>Comming Soon</span>
+          </span>
+          <span id="typed"></span>
+        </h1>
+      </div>
+    </main>
   );
 }
 
