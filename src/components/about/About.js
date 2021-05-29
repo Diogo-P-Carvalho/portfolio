@@ -1,4 +1,6 @@
+import Footer from '../footer/Footer';
 import aboutImg from '../../assets/about.jpg';
+import './About.css';
 
 function About() {
   return (
@@ -6,8 +8,7 @@ function About() {
       <h2>01 : About</h2>
 
       <article className="about-article">
-
-        <div id="about">
+        <div>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum maiores corporis consectetur hic quasi soluta temporibus eveniet culpa eos velit sed laboriosam minus quod numquam exercitationem laborum voluptatum, ut mollitia.</p>
           <h3 className="highlights">I'm driven by the love of turning ideas into reality!</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi consequatur repudiandae fugit veniam a dolores laborum eius quam, consequuntur porro nihil cumque nam nulla eaque atque ullam doloribus adipisci eveniet.</p>
@@ -17,6 +18,8 @@ function About() {
 
         <img src={aboutImg} alt="It's me!"/> 
       </article>
+
+      <Footer />
     </section>
   );
 }

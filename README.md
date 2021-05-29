@@ -2,32 +2,10 @@
 
 My portfolio where you can find out more about me and explore my projects.
 <br>
-<a href="https://github.com/Diogo-P-Carvalho/portfolio/blob/main/README.md"><strong>Explore the docs »</strong></a>
 
 <a href="#">View Demo (comming soon)</a>
 ·
 <a href="https://github.com/Diogo-P-Carvalho/portfolio/issues">Report Bug</a>
-·
-<a href="https://github.com/Diogo-P-Carvalho/portfolio/issues">Request Feature</a>
-
-<!-- TABLE OF CONTENTS -->
-<details open="open">
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>        
-      </ul>
-    </li>    
-    <li>
-      <a href="#getting-started">Getting Started</a>     
-    </li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgements">Acknowledgements</a></li>
-  </ol>
-</details>
 
 <!-- ABOUT THE PROJECT -->
 
