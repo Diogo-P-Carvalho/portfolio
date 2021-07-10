@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { 
     Switch,
     Route,
@@ -6,6 +6,7 @@ import {
     useLocation
 } from "react-router-dom";
 import Home from "../home/Home";
+import Logo from "../logo/Logo";
 import About from "../about/About";
 import Projects from "../projects/Projects";
 import Contact from "../contact/Contact";
@@ -15,6 +16,7 @@ function Navigation() {
     const pathName = useLocation().pathname;
     const toggleContent = useRef(null);
     const navContent = useRef(null);
+    const [isHome, setIsHome] = useState(pathName === "/");
     
     const handleResize = () => {
         if (window.innerWidth >= 992 && navContent.current.classList.contains('show')) {
@@ -43,7 +45,8 @@ function Navigation() {
 
     return (
         <>
-            <header>
+            <header>                
+                {!isHome ? <Logo className="nav-logo" /> : null}                
                 <nav className="navbar">
                     <button className="navbar-toggler" 
                             type="button" 
@@ -60,16 +63,16 @@ function Navigation() {
                     <div className={ pathName !== "/" ? 'navbar-collapse' : 'navbar-collapse navbar-collapse-home' } ref={navContent} id="navbar-content">
                         <ul className={ pathName !== "/" ? 'navbar-nav' : 'navbar-nav navbar-nav-home' }>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/">01 : Home</Link>
+                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/" onClick={() => setIsHome(true)}>01 : Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/about">02 : About</Link>
+                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/about" onClick={() => setIsHome(false)}>02 : About</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/projects">03 : Projects</Link>
+                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/projects" onClick={() => setIsHome(false)}>03 : Projects</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/contact">04 : Contact</Link>
+                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/contact" onClick={() => setIsHome(false)}>04 : Contact</Link>
                             </li>
                         </ul>
                     </div>                        

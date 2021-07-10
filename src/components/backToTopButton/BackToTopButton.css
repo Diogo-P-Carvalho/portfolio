@@ -1,0 +1,40 @@
+.back-to-top-button {
+    position: fixed;
+    bottom: 15px;
+    right: 13px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    height: 34px;
+    width: 35px;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s ease-in-out;
+}
+
+.back-to-top-button:focus,
+.back-to-top-button:active {
+    outline: none;
+}
+
+.fa-layers {
+    display: block;
+    height: inherit;
+    width: inherit;
+}
+
+.fa-layers svg.svg-inline--fa {
+    transition: all 0.5s ease-in-out;
+}
+
+.back-to-top-button-show {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Media Queries */
+@media (hover: hover) and (pointer: fine) {
+    .back-to-top-button div:hover > #icon1 {
+        bottom: 28px;
+    }
+}

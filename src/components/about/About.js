@@ -1,11 +1,12 @@
+import BackToTopButton from '../backToTopButton/BackToTopButton'
 import Footer from '../footer/Footer';
 import aboutImg from '../../assets/about.jpg';
 import './About.css';
 
 function About() {
-  return (
+  return (    
     <section>
-      <h2>01 : About</h2>
+      <h2>01 : About me</h2>
 
       <article className="about-article">
         <div>
@@ -18,6 +19,8 @@ function About() {
 
         <img src={aboutImg} alt="It's me!"/> 
       </article>
+
+      <BackToTopButton />
 
       <Footer />
     </section>

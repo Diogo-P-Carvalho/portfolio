@@ -50,5 +50,7 @@ Diogo Carvalho - Portfolio Comming Soon - [Linkedin](www.linkedin.com/in/diogo-c
 
 -   [React](https://reactjs.org/)
 -   [Create React App](https://create-react-app.dev/)
+-   [React Router](https://reactrouter.com/)
 -   [Google Fonts](https://fonts.google.com/)
 -   [Typed.js](https://github.com/mattboldt/typed.js)
+-   [Font Awesome](https://fontawesome.com/)
