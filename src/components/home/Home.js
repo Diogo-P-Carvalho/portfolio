@@ -3,9 +3,7 @@ import Typed from 'typed.js';
 import './Home.css';
 
 function Home() {
-
   useEffect(() => {
-    console.log('create')
     const typed = new Typed("#typed", {
       stringsElement: '#typed-strings',
       typeSpeed: 50,
@@ -16,12 +14,9 @@ function Home() {
     })
 
     return () => {
-      console.log('destroy')
       typed.destroy();
     }
   }, [])
-
-
 
   return (
     <main>
