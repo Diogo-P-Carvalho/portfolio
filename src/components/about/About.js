@@ -1,4 +1,4 @@
-import BackToTopButton from '../backToTopButton/BackToTopButton'
+import BackToTopButton from '../backToTopButton/BackToTopButton';
 import Footer from '../footer/Footer';
 import aboutImg from '../../assets/about.jpg';
 import './About.css';
