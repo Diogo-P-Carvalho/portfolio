@@ -7,9 +7,12 @@
     --white-secondary: #eee;
     --white-transparent: rgba(255, 255, 255, 0.5);
     --gray: #888;
+    --gray-secondary: #555;
+    --gray-secondary-transparent: rgba(85, 85, 85, 0.2);
     --gray-dark: #333;
     --gray-light: #9d9d9d;
     --purple: #7510f7;
+    --red: #e00;
 }
 
 html,
