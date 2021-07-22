@@ -12,7 +12,7 @@ textarea {
     border-radius: 0;
     font-size: 13px;
     line-height: 1.78;
-    color: var(--inputs-color);
+    color: var(--gray-secondary);
     font-family: "Roboto Mono", Helvetica, Arial, Helvetica, sans-serif;
     margin-bottom: 15px;
     box-sizing: border-box;
@@ -42,13 +42,9 @@ input[type="submit"] {
     transition: all 0.2s linear;
 }
 
-input[type="submit"]:hover {
-    background-color: var(--purple);
-    color: var(--white);
-}
-
 .contact-container {
     padding: 0px 15px;
+    margin-bottom: 15px;
 }
 
 .contact-container ul,
@@ -66,10 +62,6 @@ input[type="submit"]:hover {
 
 .icon-social {
     padding-right: 10px;
-}
-
-.icon-social:hover {
-    color: var(--purple);
 }
 
 [data-tooltip],
@@ -123,6 +115,28 @@ input[type="submit"]:hover {
     left: 5px;
 }
 
+.toaster {
+    box-shadow: 0 10px 6px -6px var(--gray-secondary),
+        0 3px 3px var(--gray-secondary-transparent);
+    max-width: 350px;
+}
+
+.toaster-loading {
+    background-color: var(--white);
+    color: var(--purple);
+}
+
+.toaster-success {
+    background-color: var(--purple);
+    color: var(--white);
+}
+
+.toaster-error {
+    background-color: var(--white);
+    color: var(--red);
+    font-weight: 700;
+}
+
 /* Media Queries */
 @media screen and (max-width: 992px) {
     .contact-section {
@@ -139,5 +153,16 @@ input[type="submit"]:hover {
 @media screen and (min-width: 768px) {
     form {
         width: 600px;
+    }
+}
+
+@media (hover: hover) and (pointer: fine) {
+    input[type="submit"]:hover {
+        background-color: var(--purple);
+        color: var(--white);
+    }
+
+    .icon-social:hover {
+        color: var(--purple);
     }
 }

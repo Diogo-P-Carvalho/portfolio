@@ -4,21 +4,44 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhoneAlt, faAt, faMapMarkerAlt } from '@fortawesome/free-solid-svg-icons';
 import { faLinkedinIn, faGithub, faTwitter } from '@fortawesome/free-brands-svg-icons';
 import { useForm } from 'react-hook-form';
+import toast, { Toaster } from 'react-hot-toast';
 import './Contact.css';
 
 export default function Contact() {
     const { register, formState: { errors }, handleSubmit } = useForm({ mode: "onBlur" });
 
-    const sendEmail = data => {
-      console.log(data);
+    const toastOptions = {      
+      loading: {
+        className: 'toaster toaster-loading'
+      },
+      success: {
+        duration: 4000,
+        className: 'toaster toaster-success'
+      },
+      error: {
+        duration: 4000,
+        className: 'toaster toaster-error'
+      }
+    }
+
+    const sendEmail = (data, event) => {
+      const loading = toast.loading('Sending your email...');
+
       fetch('http://localhost:3000/email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        method: 'post',
+        headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
       })
       .then(response => response.json())
-      .then(data => console.log('SUCCESS:', data))
-      .catch(error => console.log('ERROR:', error))
+      .then(data => {
+        toast.dismiss(loading);
+        toast.success('Thank you for your email!');
+        event.target.reset();        
+      })
+      .catch(error => {
+        toast.dismiss(loading);
+        toast.error('Oops! Something went wrong. Please try again later.');        
+      })
     }
 
     return (
@@ -31,7 +54,7 @@ export default function Contact() {
             { errors.name && <div data-tooltip="Please tell me your name"></div> }
 
             <input type="email" name="email" placeholder="Email" {...register("fromEmail", { required: true, pattern: /^[^\s@]+@[^\s@]+\.[^\s@]+$/ })} />
-            { errors.email && <div data-tooltip="Please enter a valid email"></div> }
+            { errors.fromEmail && <div data-tooltip="Please enter a valid email"></div> }
 
             <input type="text" name="subject" placeholder="Subject" {...register("subject", { required: true })} />
             { errors.subject && <div data-tooltip="Please tell me your subject"></div> }
@@ -59,6 +82,7 @@ export default function Contact() {
 
         <BackToTopButton />
         <Footer />
+        <Toaster toastOptions={toastOptions} />
       </section>
     );
   }

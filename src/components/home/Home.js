@@ -26,7 +26,6 @@ function Home() {
             <span>I'm Diogo Carvalho</span>
             <span>Software Developer</span>
             <span>And Coffee Lover!</span>
-            <span>Comming Soon</span>
           </span>
           <span id="typed"></span>
         </h1>
