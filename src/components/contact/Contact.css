@@ -156,6 +156,12 @@ input[type="submit"] {
     }
 }
 
+@media screen and (max-width: 375px) {
+    .contact-container ul li {
+        font-size: 12px;
+    }
+}
+
 @media (hover: hover) and (pointer: fine) {
     input[type="submit"]:hover {
         background-color: var(--purple);

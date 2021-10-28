@@ -27,7 +27,7 @@ export default function Contact() {
     const sendEmail = (data, event) => {
       const loading = toast.loading('Sending your email...');
 
-      fetch('http://localhost:3000/email', {
+      fetch('https://vast-depths-08349.herokuapp.com/email', {
         method: 'post',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(data)
@@ -76,7 +76,7 @@ export default function Contact() {
 
             <a href="https://www.linkedin.com/in/diogo-carvalho-83a96a14a" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faLinkedinIn} size="3x" color="var(--black)" className="icon icon-social"/></a>
             <a href="https://github.com/Diogo-P-Carvalho" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faGithub} size="3x" color="var(--black)" className="icon icon-social"/></a>
-            <a href="https://twitter.com/diogoOak" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faTwitter} size="3x" color="var(--black)" className="icon icon-social"/></a>
+            <a href="https://twitter.com/diogoOak" target="_blank" rel="noreferrer"><FontAwesomeIcon icon={faTwitter} size="3x" color="var(--black)" className="icon icon-social"/></a>         
           </div>
         </article>
 

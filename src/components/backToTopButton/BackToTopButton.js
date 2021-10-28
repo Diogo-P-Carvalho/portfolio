@@ -17,11 +17,9 @@ export default function BackToTopButton() {
     }
 
     useEffect(() => {
-        console.log('event listner added')
         window.addEventListener('scroll', showButton);
 
         return () => {
-            console.log('event listner removed')
             window.removeEventListener('scroll', showButton);
           }
     }, [])

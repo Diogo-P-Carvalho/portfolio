@@ -1,5 +1,5 @@
 article img {
-    justify-self: end;
+    justify-self: center;
 }
 
 .about-article {
@@ -17,15 +17,15 @@ h3 {
 }
 
 /* Media Queries */
-@media screen and (max-width: 992px) {
-    article img {
-        justify-self: center;
-    }
-}
-
 @media screen and (min-width: 992px) {
     .about-article {
         grid-template-columns: 1fr 1fr;
+        /* padding: 0 8rem; */
+    }
+}
+
+@media screen and (min-width: 1367px) {
+    .about-article {
         padding: 0 8rem;
     }
 }

@@ -24,6 +24,7 @@
 
 @media screen and (min-width: 992px) {
     .projects-article {
+        max-width: 40%;
         padding: 0 8rem;
     }
 }
