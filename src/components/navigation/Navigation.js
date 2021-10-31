@@ -16,7 +16,7 @@ function Navigation() {
     const pathName = useLocation().pathname;
     const toggleContent = useRef(null);
     const navContent = useRef(null);
-    const [isHome, setIsHome] = useState(pathName === "/");
+    const [isHome, setIsHome] = useState(pathName === "/portfolio");
     
     const handleResize = () => {
         if (window.innerWidth >= 992 && navContent.current.classList.contains('show')) {
@@ -55,24 +55,24 @@ function Navigation() {
                             aria-controls="navbar-content"
                             aria-expanded="false"
                             ref={toggleContent}>
-                        <span className={ pathName !== "/" ? 'toggler-icon': 'toggler-icon toggler-icon-home'}></span>
-                        <span className={ pathName !== "/" ? 'toggler-icon': 'toggler-icon toggler-icon-home'}></span>
-                        <span className={ pathName !== "/" ? 'toggler-icon': 'toggler-icon toggler-icon-home'}></span>
+                        <span className={ pathName !== "/portfolio" ? 'toggler-icon': 'toggler-icon toggler-icon-home'}></span>
+                        <span className={ pathName !== "/portfolio" ? 'toggler-icon': 'toggler-icon toggler-icon-home'}></span>
+                        <span className={ pathName !== "/portfolio" ? 'toggler-icon': 'toggler-icon toggler-icon-home'}></span>
                     </button>
 
-                    <div className={ pathName !== "/" ? 'navbar-collapse' : 'navbar-collapse navbar-collapse-home' } ref={navContent} id="navbar-content">
-                        <ul className={ pathName !== "/" ? 'navbar-nav' : 'navbar-nav navbar-nav-home' }>
+                    <div className={ pathName !== "/portfolio" ? 'navbar-collapse' : 'navbar-collapse navbar-collapse-home' } ref={navContent} id="navbar-content">
+                        <ul className={ pathName !== "/portfolio" ? 'navbar-nav' : 'navbar-nav navbar-nav-home' }>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/" onClick={() => setIsHome(true)}>01 : Home</Link>
+                                <Link className={ pathName !== "/portfolio" ? 'nav-link' : 'nav-link nav-link-home' } to="/portfolio" onClick={() => setIsHome(true)}>01 : Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/about" onClick={() => setIsHome(false)}>02 : About</Link>
+                                <Link className={ pathName !== "/portfolio" ? 'nav-link' : 'nav-link nav-link-home' } to="/portfolio/about" onClick={() => setIsHome(false)}>02 : About</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/projects" onClick={() => setIsHome(false)}>03 : Projects</Link>
+                                <Link className={ pathName !== "/portfolio" ? 'nav-link' : 'nav-link nav-link-home' } to="/portfolio/projects" onClick={() => setIsHome(false)}>03 : Projects</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/" ? 'nav-link' : 'nav-link nav-link-home' } to="/contact" onClick={() => setIsHome(false)}>04 : Contact</Link>
+                                <Link className={ pathName !== "/portfolio" ? 'nav-link' : 'nav-link nav-link-home' } to="/portfolio/contact" onClick={() => setIsHome(false)}>04 : Contact</Link>
                             </li>
                         </ul>
                     </div>                        
@@ -80,10 +80,10 @@ function Navigation() {
             </header>                
 
             <Switch>
-                <Route path="/contact" component={Contact} />
-                <Route path="/projects" component={Projects} />
-                <Route path="/about" component={About} />
-                <Route path="/" exact component={Home} />                    
+                <Route path="/portfolio/contact" component={Contact} />
+                <Route path="/portfolio/projects" component={Projects} />
+                <Route path="/portfolio/about" component={About} />
+                <Route path="/portfolio" exact component={Home} />                    
             </Switch>
         </>
     )
