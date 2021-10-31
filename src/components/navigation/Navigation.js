@@ -15,8 +15,8 @@ import './Navigation.css';
 function Navigation() {
     const pathName = useLocation().pathname;
     const toggleContent = useRef(null);
-    const navContent = useRef(null);
-    const [isHome, setIsHome] = useState(pathName === "/portfolio");
+    const navContent = useRef(null);    
+    const [isHome, setIsHome] = useState(pathName === "/portfolio" || pathName === "/portfolio/");
     
     const handleResize = () => {
         if (window.innerWidth >= 992 && navContent.current.classList.contains('show')) {
@@ -55,24 +55,24 @@ function Navigation() {
                             aria-controls="navbar-content"
                             aria-expanded="false"
                             ref={toggleContent}>
-                        <span className={ pathName !== "/portfolio" ? 'toggler-icon': 'toggler-icon toggler-icon-home'}></span>
-                        <span className={ pathName !== "/portfolio" ? 'toggler-icon': 'toggler-icon toggler-icon-home'}></span>
-                        <span className={ pathName !== "/portfolio" ? 'toggler-icon': 'toggler-icon toggler-icon-home'}></span>
+                        <span className={ pathName === "/portfolio" || pathName === "/portfolio/" ? 'toggler-icon toggler-icon-home' : 'toggler-icon' }></span>
+                        <span className={ pathName === "/portfolio" || pathName === "/portfolio/" ? 'toggler-icon toggler-icon-home' : 'toggler-icon' }></span>
+                        <span className={ pathName === "/portfolio" || pathName === "/portfolio/" ? 'toggler-icon toggler-icon-home' : 'toggler-icon' }></span>
                     </button>
 
-                    <div className={ pathName !== "/portfolio" ? 'navbar-collapse' : 'navbar-collapse navbar-collapse-home' } ref={navContent} id="navbar-content">
-                        <ul className={ pathName !== "/portfolio" ? 'navbar-nav' : 'navbar-nav navbar-nav-home' }>
+                    <div className={ pathName === "/portfolio" || pathName === "/portfolio/" ? 'navbar-collapse navbar-collapse-home' : 'navbar-collapse' } ref={navContent} id="navbar-content">
+                        <ul className={ pathName === "/portfolio" || pathName === "/portfolio/" ? 'navbar-nav navbar-nav-home' : 'navbar-nav' }>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/portfolio" ? 'nav-link' : 'nav-link nav-link-home' } to="/portfolio" onClick={() => setIsHome(true)}>01 : Home</Link>
+                                <Link className={ pathName === "/portfolio" || pathName === "/portfolio/" ? 'nav-link nav-link-home' : 'nav-link' } to="/portfolio" onClick={() => setIsHome(true)}>01 : Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/portfolio" ? 'nav-link' : 'nav-link nav-link-home' } to="/portfolio/about" onClick={() => setIsHome(false)}>02 : About</Link>
+                                <Link className={ pathName === "/portfolio" || pathName === "/portfolio/" ? 'nav-link nav-link-home' : 'nav-link' } to="/portfolio/about" onClick={() => setIsHome(false)}>02 : About</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/portfolio" ? 'nav-link' : 'nav-link nav-link-home' } to="/portfolio/projects" onClick={() => setIsHome(false)}>03 : Projects</Link>
+                                <Link className={ pathName === "/portfolio" || pathName === "/portfolio/" ? 'nav-link nav-link-home' : 'nav-link' } to="/portfolio/projects" onClick={() => setIsHome(false)}>03 : Projects</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className={ pathName !== "/portfolio" ? 'nav-link' : 'nav-link nav-link-home' } to="/portfolio/contact" onClick={() => setIsHome(false)}>04 : Contact</Link>
+                                <Link className={ pathName === "/portfolio" || pathName === "/portfolio/" ? 'nav-link nav-link-home' : 'nav-link' } to="/portfolio/contact" onClick={() => setIsHome(false)}>04 : Contact</Link>
                             </li>
                         </ul>
                     </div>                        
