@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap");
+
+:root {
+    --black: #000;
+    --black-transparent: rgba(0, 0, 0, 0.5);
+    --white: #fff;
+    --white-secondary: #eee;
+    --white-transparent: rgba(255, 255, 255, 0.5);
+    --gray: #888;
+    --gray-secondary: #555;
+    --gray-secondary-transparent: rgba(85, 85, 85, 0.2);
+    --gray-dark: #333;
+    --gray-light: #9d9d9d;
+    --purple: #7510f7;
+    --red: #e00;
+}
+
+html,
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+#root {
+    overflow: auto;
+}
+
+body {
+    font-family: "Roboto Mono", Helvetica, Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--black);
+    background-color: var(--white);
+    letter-spacing: 0.8px;
+    line-height: 25px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+    text-decoration: none;
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h2 {
+    font-size: 30px;
+    text-align: center;
+}
+
+article {
+    margin: 20px 100px;
+}
+
+p {
+    margin: 0 0 15px;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+button {
+    cursor: pointer;
+}
+
+/* Media Queries */
+@media screen and (max-width: 992px) {
+    section {
+        padding-top: 76px;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    article {
+        margin: 0 50px;
+    }
+}
